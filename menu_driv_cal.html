@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //menu driven 
+        do{
+            var a = parseInt(prompt("Enter First Number :: "));
+            var b = parseInt(prompt("Enter the Second Number ::"));
+            var choice = parseInt(prompt("Enter the choice \n1-Add\n 2-Sub\n 3-Mul \n 4-Div"));
+            var ans;
+            switch(choice){
+                case 1:{
+                    ans = a+b;
+                    break;
+                }
+                case 2:{
+                    ans = a-b;
+                    break;
+                }
+                case 3:{
+                    ans = a*b;
+                    break;
+                }
+                case 4:{
+                    ans = a/b;
+                    break;
+                }
+            }
+            alert("Ans is :: "+ans);
+            var check=prompt("do you want to continue press 1");
+        }while(check=="1");
+
+
+
+    </script>
+</body>
+</html>

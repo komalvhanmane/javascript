@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; flex-direction: column; align-items: center; height: 50vh; background-color: aquamarine; margin-left: 20%; margin-right: 20%;">
+        <input type="number" id="number">
+
+        <select name="" id="select" onchange="pattern()">
+            <option value="">select</option>
+            <option value="square">Square</option>
+            <option value="triangle">Triangle</option>
+        </select>
+
+
+        <div id="pattern1">
+
+        </div>
+    </div>
+    
+    <script>
+        function pattern(){
+            var n=document.getElementById("number").value;
+            var choice=document.getElementById("select").value;
+
+            if(choice == "square"){
+                var str="";
+                for(var i=0;i<n;i++){
+                    for(var j=0;j<n;j++){
+                        str = str + " *";
+                    }
+                    str = str + "<br>"
+                }
+            }else if(choice == "triangle"){
+                var str="";
+                for(var i=0;i<n;i++){
+                    for(var j=0;j<i+1;j++){
+                        str = str + " *";
+                    }
+                    str = str + "<br>"
+                }
+            }
+            
+            document.getElementById("pattern1").innerHTML = str;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Word Count</h1>
+    <textarea onkeypress="check()" id="text1" name="" cols="30" rows="10">
+
+    </textarea>
+
+    <p id="count">100</p>
+
+    <script>
+        function check(){
+            var len = (document.getElementById("text1").value).length;
+            console.log(len)
+            document.getElementById('count').innerHTML = 100-len;
+        }
+    </script>
+</body>
+</html>

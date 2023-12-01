@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <table>
+        <tr>
+            <td>
+                <button onclick="show(1)">1</button>
+            </td>
+            <td>
+                <button onclick="show(2)">2</button>
+            </td>
+            <td>
+                <button onclick="show(3)">3</button>
+            </td>
+            <td>
+                <button onclick="show(4)">4</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="show(5)">5</button>
+            </td>
+            <td>
+                <button onclick="show(6)">6</button>
+            </td>
+            <td>
+                <button onclick="show(7)">7</button>
+            </td>
+            <td>
+                <button onclick="show(8)">8</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="show(9)">9</button>
+            </td>
+            <td>
+                <button onclick="show(0)">0</button>
+            </td>
+            <td>
+                <button onclick="clear1()">C</button>
+            </td>
+            <td>
+                <button onclick="cal()">=</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="show('+')">+</button>
+            </td>
+            <td>
+                <button onclick="show('-')">-</button>
+            </td>
+            <td>
+                <button onclick="show('*')">*</button>
+            </td>
+            <td>
+                <button onclick="show('/')">/</button>
+            </td>
+            <td>
+                <button onclick="back()">B</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function show(num){
+            if(num == "+" || num == "-" || num == "*" || num == "/"){
+                var val=document.getElementById("input").value;
+
+                if(val.length != 0){
+
+                    val = val.substring(val.length-1 , val.length);
+
+                    if(val == "+" || val == "-" || val == "*" || val == "/"){
+                        if(val != num){
+                            var val=document.getElementById("input").value;
+                            document.getElementById("input").value = val.substring(0,val.length-1)+num;
+                        }
+                    }
+                    else{
+                        var val=document.getElementById("input").value;
+                        document.getElementById("input").value = val+num;
+                    }
+                }
+            }
+            else{
+                var val=document.getElementById("input").value;
+                document.getElementById("input").value = val+num;
+            }
+        }
+
+        function clear1(){
+            document.getElementById("input").value='';
+        }
+
+        function cal(){
+            var x=eval(document.getElementById("input").value);
+            document.getElementById("input").value=x;
+        }
+
+        // "123456"
+        // 6
+        // 0,5
+        // && 
+        function back(){
+            var x=document.getElementById("input").value;
+            x = x.substring(0,x.length-1);
+            document.getElementById("input").value=x;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fun1()"> Click Here </button>
+
+    <select name="" id="" onchange="fun2()">
+        <option value="">dsjfdfh</option>
+        <option value="">sdkfsdf</option>
+    </select>
+
+    <input type="text" onkeypress="fun3()">
+<br>
+on input
+    <input type="text" id="text1" oninput="fun4()">
+
+    <p id="count">100</p>
+
+    <br>
+    on blur
+
+    <input type="text" id="text" onblur="fun5()">
+
+    <div onmousemove="fun6()" onmouseout="fun7()">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae deserunt repellendus quam alias nihil quo ea accusamus voluptate eos omnis voluptatibus exercitationem unde explicabo praesentium rem, placeat doloribus expedita perferendis.
+    </div>
+
+    <p id="mouse"></p>
+
+    <br>
+    <input type="text" onselect="fun8()">
+
+    <script>
+        function fun1()
+        {
+            alert("On click Function");
+        }
+
+        function fun2(){
+            alert("On change Function");
+        }
+
+        function fun3(){
+            alert("On Key Press")
+        }
+
+        function fun4(){
+            var str= document.getElementById("text1").value;
+            document.getElementById("count").innerHTML = 100 - str.length;
+        }
+
+        function fun5(){
+            var str = document.getElementById("text").value;
+            document.getElementById("text").value = str.toUpperCase();
+        }
+
+        function fun6(){
+            document.getElementById("mouse").innerHTML = "Hello World"
+        }
+
+        function fun7(){
+            document.getElementById("mouse").innerHTML = "Hello World in HTML"
+        }
+
+        function fun8(){
+            alert("Hello")
+        }
+
+    </script>
+</body>
+</html>
